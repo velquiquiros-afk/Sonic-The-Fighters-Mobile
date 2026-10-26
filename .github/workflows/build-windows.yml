@@ -1,34 +1,5 @@
-
-name: Build Sonic the Fighters EXE
-on:
-  workflow_dispatch:
-  push:
-    tags:
-      - "v*"
-permissions:
-  contents: write
-jobs:
-  build:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - name: Install dependencies
-        run: npm install
-      - name: Build Windows EXE
-        run: npm run dist
-      - name: Upload EXE artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: Sonic-The-Fighters-Windows
-          path: dist/*.exe
-      - name: Publish EXE to GitHub Release
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: softprops/action-gh-release@v2
-        with:
-          files: dist/*.exe
+- name: Setup Node.js
+  uses: actions/setup-node@v4
+  with:
+    node-version: 20
+    cache: npm
