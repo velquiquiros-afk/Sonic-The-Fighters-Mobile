@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050914">
+<meta name="description" content="Sonic the Fighters Mobile para Android">
+<title>Sonic the Fighters Mobile</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:#050914;color:#f4f8ff;
+ font-family:Arial,Helvetica,sans-serif;
+ background-image:radial-gradient(ellipse at top,#10376c 0%,#050914 65%);
+ min-height:100vh
+}
+header{
+ display:flex;justify-content:space-between;align-items:center;
+ flex-wrap:wrap;gap:15px;padding:22px 7%;
+ background:#030814dd;border-bottom:1px solid #174c80
+}
+.logo{font-weight:900;letter-spacing:2px;color:#37d9ff}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:#b5c9e6;text-decoration:none;font-size:13px}
+nav a:hover{color:#39d9ff}
+.hero{text-align:center;padding:70px 20px 55px}
+.orb{
+ width:140px;height:140px;border-radius:50%;margin:0 auto 30px;
+ background:radial-gradient(circle at 30% 25%,white,#53dfff 12%,#087aff 43%,#031747 75%);
+ box-shadow:0 0 35px #168bff,0 0 90px #087aff44;
+ border:2px solid #60dfff
+}
+.kicker{color:#39d9ff;font-size:12px;letter-spacing:4px;font-weight:bold}
+h1{font-size:clamp(34px,8vw,65px);line-height:1.08;margin:18px 0}
+h1 span{color:#39d9ff}
+.desc{max-width:550px;margin:20px auto;color:#afc1dc;line-height:1.8}
+.buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:25px 0}
+.btn{
+ display:inline-block;text-decoration:none;padding:16px 22px;
+ border-radius:5px;font-weight:bold;font-size:13px;
+ transition:.2s;border:1px solid #267bb5
+}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(110deg,#39d9ff,#147aff);color:#001126;border:0}
+.secondary{background:#0b1930;color:#eaf5ff}
+.section{width:min(950px,90%);margin:auto;padding:35px 0}
+.section h2{font-size:26px}
+.muted{color:#a8bbd7;line-height:1.8}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{
+ background:#0b1830d9;border:1px solid #1b416b;
+ padding:24px;border-radius:9px
+}
+.card h3{margin-top:0}
+.card p{color:#afc1dc;font-size:14px;line-height:1.8}
+.download{
+ padding:27px;border-radius:10px;border:1px solid #2788c6;
+ background:linear-gradient(130deg,#0c2b55,#091326)
+}
+.tag{color:#39d9ff;font-size:12px;font-weight:bold;letter-spacing:2px}
+#release-info{color:#b5c7df;line-height:1.8;overflow-wrap:anywhere}
+footer{
+ text-align:center;padding:30px 7%;margin-top:35px;
+ border-top:1px solid #1b3554;color:#8298b8;
+ font-size:12px;line-height:1.9
+}
+footer a{color:#39d9ff}
+@media(max-width:500px){
+ header{padding:18px 5%}
+ .hero{padding-top:45px}
+ .btn{width:100%;text-align:center}
+ .section{padding:25px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">SFT // MOBILE</div>
+ <nav>
+  <a href="#inicio">INICIO</a>
+  <a href="#proyecto">PROYECTO</a>
+  <a href="#descargas">DESCARGAS</a>
+ </nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+ <div class="orb" aria-hidden="true"></div>
+ <div class="kicker">PROYECTO FAN · ANDROID</div>
+ <h1>SONIC THE FIGHTERS<br><span>MOBILE</span></h1>
+ <p class="desc">
+  El proyecto de Sonic the Fighters para dispositivos móviles.
+  Consulta las novedades y encuentra las versiones disponibles.
+ </p>
+ <div class="buttons">
+  <a class="btn primary" href="#descargas">↓ DESCARGAR APK</a>
+  <a class="btn secondary"
+   href="https://github.com/velquiquiros-afk/Sonic-The-Fighters-Mobile"
+   target="_blank" rel="noopener noreferrer">VER EN GITHUB ↗</a>
+ </div>
+ <p class="muted" id="hero-status">Consultando las publicaciones...</p>
+</section>
+
+<section class="section" id="proyecto">
+ <h2>EXPLORA EL PROYECTO</h2>
+ <p class="muted">Toda la información en un solo lugar.</p>
+ <div class="grid">
+  <article class="card">
+   <h3>◈ Experiencia móvil</h3>
+   <p>Consulta las versiones preparadas para Android y sus novedades.</p>
+  </article>
+  <article class="card">
+   <h3>⚡ Actualizaciones</h3>
+   <p>Revisa las publicaciones y los archivos de cada lanzamiento.</p>
+  </article>
+  <article class="card">
+   <h3>⌘ Código abierto</h3>
+   <p>Visita el repositorio para consultar el progreso del proyecto.</p>
+  </article>
+ </div>
+</section>
+
+<section class="section" id="descargas">
+ <h2>DESCARGAS</h2>
+ <p class="muted">Versión para Android · Archivo APK</p>
+ <div class="download">
+  <div class="tag" id="release-badge">GITHUB RELEASES</div>
+  <h3 id="release-title">Buscando versión...</h3>
+  <p id="release-info">Comprobando si hay un APK publicado.</p>
+  <div class="buttons" style="justify-content:flex-start">
+   <a class="btn primary" id="download-btn"
+    href="https://github.com/velquiquiros-afk/Sonic-The-Fighters-Mobile/releases"
+    target="_blank" rel="noopener noreferrer">VER DESCARGAS</a>
+   <a class="btn secondary"
+    href="https://github.com/velquiquiros-afk/Sonic-The-Fighters-Mobile/releases"
+    target="_blank" rel="noopener noreferrer">TODAS LAS VERSIONES ↗</a>
+  </div>
+ </div>
+ <p class="muted">
+  Si no aparece un APK, todavía no hay un archivo instalable en la
+  última publicación estable o no se pudo consultar GitHub.
+ </p>
+</section>
+</main>
+
+<footer>
+ <p>SONIC THE FIGHTERS MOBILE · PROYECTO DE FANS INDEPENDIENTE</p>
+ <p>No es un producto oficial de SEGA. Sonic the Fighters y sus
+ personajes pertenecen a sus respectivos titulares.</p>
+ <a href="https://github.com/velquiquiros-afk/Sonic-The-Fighters-Mobile">
+  REPOSITORIO OFICIAL DEL PROYECTO
+ </a>
+</footer>
+
+<script>
+(async function(){
+ const owner="velquiquiros-afk";
+ const repo="Sonic-The-Fighters-Mobile";
+ const releases=`https://github.com/${owner}/${repo}/releases`;
+ const api=`https://api.github.com/repos/${owner}/${repo}/releases/latest`;
+
+ const title=document.getElementById("release-title");
+ const info=document.getElementById("release-info");
+ const btn=document.getElementById("download-btn");
+ const badge=document.getElementById("release-badge");
+ const status=document.getElementById("hero-status");
+
+ function unavailable(message){
+  title.textContent="APK todavía no disponible";
+  info.textContent=message;
+  badge.textContent="CONSULTAR PUBLICACIONES";
+  btn.textContent="VER DESCARGAS";
+  btn.href=releases;
+  btn.target="_blank";
+  btn.rel="noopener noreferrer";
+  status.textContent="Consulta las publicaciones disponibles en GitHub.";
+ }
+
+ try{
+  const response=await fetch(api,{
+   headers:{Accept:"application/vnd.github+json"}
+  });
+  if(!response.ok) throw new Error("No hay una versión disponible");
+
+  const release=await response.json();
+  if(release.draft || release.prerelease)
+   throw new Error("No hay una versión estable");
+
+  const assets=release.assets||[];
+  const apk=assets.find(a=>
+   a.name.toLowerCase().endsWith(".apk") &&
+   a.state==="uploaded" &&
+   a.browser_download_url
+  );
+
+  if(!apk){
+   unavailable("La última publicación estable no contiene un archivo APK. Cuando adjuntes uno a una GitHub Release, aparecerá aquí.");
+   return;
+  }
+
+  title.textContent=release.name||release.tag_name;
+  info.textContent="Versión: "+release.tag_name+
+   " · Archivo: "+apk.name+
+   " · Tamaño: "+(apk.size/1048576).toFixed(1)+" MB";
+
+  badge.textContent="VERSIÓN DISPONIBLE";
+  btn.textContent="↓ DESCARGAR APK";
+  btn.href=apk.browser_download_url;
+  btn.removeAttribute("target");
+  btn.removeAttribute("rel");
+  status.textContent="Última versión: "+release.tag_name;
+
+ }catch(error){
+  unavailable("No se pudo detectar un APK. Abre las publicaciones para revisar los archivos disponibles.");
+ }
+})();
+</script>
+</body>
+</html>
