@@ -1,0 +1,26 @@
+
+{
+  "name": "sonic-the-fighters-desktop",
+  "version": "1.0.0",
+  "description": "Sonic the Fighters desktop web application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.sonicfighters.desktop",
+    "productName": "Sonic the Fighters",
+    "files": [
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "target": ["nsis", "portable"]
+    }
+  }
+}
