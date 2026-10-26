@@ -1,6 +1,0 @@
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Windows EXE
-        run: npm run build -- --win
